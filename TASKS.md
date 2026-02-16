@@ -24,11 +24,11 @@
 - [x] Room detail page (Implemented as modal)
 - [x] My Bookings page
 
-## 🎯 Phase 4: Admin Features
+## 🎯 Phase 4: Admin Features ✅
 
-- [ ] Admin dashboard
-- [ ] Booking approval page
-- [ ] Room management (CRUD)
+- [x] Admin dashboard
+- [x] Booking approval page
+- [x] Room management (CRUD)
 
 ## 🎯 Phase 5: Polish & Deployment
 

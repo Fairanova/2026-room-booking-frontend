@@ -63,11 +63,8 @@ function registerRoutes() {
     router.addRoute('/rooms', renderRoomsPage);
     router.addRoute('/bookings', renderBookingsPage);
     
-    // Admin route placeholder
-    router.addRoute('/admin', () => {
-        const content = document.getElementById('main-content');
-        content.innerHTML = '<div class="container"><h2>Admin Panel</h2><p>Coming in Phase 4</p></div>';
-    });
+    // Admin route
+    router.addRoute('/admin', renderAdminPage);
 }
 
 // Initialize application
