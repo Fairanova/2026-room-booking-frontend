@@ -68,6 +68,9 @@ function createStatusBadge(status) {
     return `<span class="badge ${statusClass[status]}">${STATUS_LABELS[status]}</span>`;
 }
 
+// Alias for compatibility
+const getStatusBadge = createStatusBadge;
+
 // Create role badge  
 function createRoleBadge(role) {
     const roleClass = {
