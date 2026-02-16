@@ -109,7 +109,7 @@ class AuthService {
         this.removeToken();
         localStorage.removeItem(APP_CONFIG.USER_KEY);
         this.currentUser = null;
-        window.location.href = '/';
+        window.location.href = '/booking-room-fe/index.html';
     }
 
     // Refresh user profile
