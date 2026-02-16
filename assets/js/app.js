@@ -15,11 +15,15 @@ function renderNavigation() {
     `;
 
     if (isAuthenticated) {
-        navHTML += `
-            <li><a href="#/dashboard" class="nav-link" data-route="/dashboard">Dashboard</a></li>
-            <li><a href="#/rooms" class="nav-link" data-route="/rooms">Rooms</a></li>
-            <li><a href="#/bookings" class="nav-link" data-route="/bookings">My Bookings</a></li>
-        `;
+        navHTML += `<li><a href="#/dashboard" class="nav-link" data-route="/dashboard">Dashboard</a></li>`;
+
+        // Only show Rooms and My Bookings for Student
+        if (auth.hasRole(USER_ROLES.STUDENT)) {
+            navHTML += `
+                <li><a href="#/rooms" class="nav-link" data-route="/rooms">Rooms</a></li>
+                <li><a href="#/bookings" class="nav-link" data-route="/bookings">My Bookings</a></li>
+            `;
+        }
 
         if (auth.isAdminOrStaff()) {
             navHTML += `<li><a href="#/admin" class="nav-link" data-route="/admin">Admin</a></li>`;

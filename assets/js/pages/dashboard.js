@@ -53,12 +53,14 @@ async function renderDashboardPage() {
             <div class="card" style="margin-bottom: 2rem;">
                 <h3 style="margin-bottom: 1rem;">Quick Actions</h3>
                 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    ${auth.hasRole(USER_ROLES.STUDENT) ? `
                     <a href="#/rooms" class="btn btn-primary">
                         🏢 Browse Rooms
                     </a>
                     <a href="#/bookings" class="btn btn-outline">
                         📋 My Bookings
                     </a>
+                    ` : ''}
                     ${auth.isAdminOrStaff() ? '<a href="#/admin" class="btn btn-secondary">⚙️ Admin Panel</a>' : ''}
                 </div>
             </div>

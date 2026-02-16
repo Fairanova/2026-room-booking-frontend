@@ -32,6 +32,7 @@
 
 ## 🎯 Phase 5: Polish & Deployment
 
+- [x] Restrict Student-only features (Rooms, My Bookings)
 - [ ] Responsive design refinement
 - [ ] Error handling
 - [ ] Loading states

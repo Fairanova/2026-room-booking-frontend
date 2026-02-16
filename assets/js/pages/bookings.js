@@ -6,6 +6,12 @@ async function renderBookingsPage() {
         return;
     }
 
+    // Restrict access for Admin/Staff
+    if (auth.isAdminOrStaff()) {
+        router.navigate('/admin');
+        return;
+    }
+
     const content = document.getElementById('main-content');
     content.innerHTML = `
         <div class="container">
