@@ -36,4 +36,4 @@
 - [ ] Responsive design refinement
 - [ ] Error handling
 - [ ] Loading states
-- [ ] README documentation
+- [x] README documentation

@@ -1,112 +1,113 @@
-# 🎨 Room Booking Frontend
+# 🏢 Room Booking System Frontend
 
-Frontend web application untuk Room Booking System menggunakan HTML, CSS, dan JavaScript vanilla.
+A modern, responsive web application for managing university room bookings. Built with Vanilla JavaScript, HTML5, and CSS3, featuring a complete role-based access control system.
+
+## ✨ Features
+
+### 🔐 Authentication & Security
+
+- **Secure Login & Registration**: JWT-based authentication.
+- **Role-Based Access Control (RBAC)**: Strict separation between Student, Staff, and Admin roles.
+- **Protected Routes**: Automatic redirection for unauthorized access.
+
+### 🎓 Student Features
+
+- **Dashboard**: Quick overview of booking stats and recent activities.
+- **Browse Rooms**: View available rooms with details (capacity, facilities).
+- **Search & Filter**: Find rooms by name, code, or building.
+- **Book a Room**: Simple modal interface to request room bookings.
+- **My Bookings**: Track booking status (Pending, Approved, Rejected) and cancel pending requests.
+
+### 🛡️ Admin & Staff Features
+
+- **Admin Dashboard**: Overview of system-wide booking statistics.
+- **Room Management (CRUD)**:
+  - Add new rooms with facilities.
+  - Edit existing room details.
+  - Soft-delete rooms.
+- **Booking Management**:
+  - View all bookings in the system.
+  - Filter by status (Pending, Approved, Rejected, etc.).
+  - **Approve/Reject Workflow**: Review booking requests with optional rejection reasons.
+
+## 🛠️ Tech Stack
+
+- **Core**: HTML5, CSS3, JavaScript (ES6+)
+- **Architecture**: Single Page Application (SPA) with custom Router
+- **Styling**: Custom CSS Variables, Flexbox/Grid (No frameworks)
+- **API**: Fetch API for communication with .NET Core Backend
 
 ## 📁 Project Structure
 
-```
+```bash
 booking-room-fe/
-├── index.html              # Main HTML file
-├── TASKS.md               # Development task tracking
+├── index.html              # Entry point
 ├── assets/
 │   ├── css/
-│   │   ├── main.css       # Base styles & design system
-│   │   └── components.css # UI components
+│   │   ├── main.css        # Global variables & reset
+│   │   └── components.css  # Reusable UI components
 │   └── js/
-│       ├── config.js      # App & API configuration
-│       ├── api.js         # API service layer
-│       ├── auth.js        # Authentication service
-│       ├── utils.js       # Utility functions
-│       ├── router.js      # SPA router
-│       └── app.js         # Main application
+│       ├── app.js          # Main application logic & navigation
+│       ├── router.js       # Client-side routing
+│       ├── auth.js         # Authentication service
+│       ├── api.js          # API client wrapper
+│       ├── config.js       # App configuration
+│       └── pages/          # Page controllers
+│           ├── home.js
+│           ├── login.js
+│           ├── register.js
+│           ├── dashboard.js
+│           ├── rooms.js    # Student room browsing
+│           ├── bookings.js # Student booking management
+│           └── admin.js    # Admin panel features
 ```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Web browser (Chrome, Firefox, Safari, Edge)
-- Backend API running on `http://localhost:5001`
+- A modern web browser.
+- Backend API running on `http://localhost:5001`.
 
 ### Installation
 
-1. Clone/download project to `d:\booking-room-fe`
+1. **Clone the repository**
 
-2. Open `index.html` in browser or use a local server:
+   ```bash
+   git clone https://github.com/Fairanova/2026-room-booking-frontend.git
+   cd booking-room-fe
+   ```
 
-```bash
-# Using Python
-python -m http.server 8000
+2. **Serve the application**
+   You can use any static file server. Examples:
 
-# Using PHP
-php -S localhost:8000
+   **Using Python:**
 
-# Using Node.js (http-server)
-npx http-server
-```
+   ```bash
+   python -m http.server 8000
+   ```
 
-3. Access application at `http://localhost:8000`
+   **Using Node.js (http-server):**
 
-## ✨ Features (Phase 1 - Completed)
+   ```bash
+   npx http-server
+   ```
 
-- ✅ Project structure setup
-- ✅ Design system with modern dark theme
-- ✅ API integration layer
-- ✅ Authentication service
-- ✅ Simple SPA routing
-- ✅ Responsive navigation
-- ✅ Base UI components (buttons, cards, forms, badges)
+   **VS Code Live Server:**
+   Open index.html and click "Go Live".
 
-## 📋 Development Phases
+3. **Access the App**
+   Open `http://localhost:8000` (or your server port) in the browser.
 
-### ✅ Phase 1: Project Initialization (DONE)
+## 🔧 Configuration
 
-- Project structure
-- CSS design system
-- API configuration
-- Base routing
+API Endpoints are configured in `assets/js/config.js`.
+Default API URL: `http://localhost:5001/api`
 
-### 🔄 Phase 2: Authentication (Next)
+## 👥 User Roles (Demo Credentials)
 
-- Login page
-- Register page
-- JWT token management
-
-### ⏳ Phase 3: Main Features (Upcoming)
-
-- Dashboard
-- Rooms listing & search
-- Booking management
-
-### ⏳ Phase 4: Admin Panel (Upcoming)
-
-- Booking approval
-- Room management
-
-## 🎨 Design System
-
-### Colors
-
-- Primary: Purple gradient (#667eea → #764ba2)
-- Background: Dark navy (#0f172a, #1e293b)
-- Text: Light (#f1f5f9, #cbd5e1)
-
-### Components
-
-- Buttons (primary, secondary, outline)
-- Cards with hover effects
-- Form inputs with focus states
-- Status badges
-- Alerts & notifications
-- Loading spinners
-- Modal dialogs
-
-## 🔗 API Configuration
-
-Backend API: `http://localhost:5001/api`
-
-See `assets/js/config.js` for all endpoint configurations.
-
-## 📝 License
-
-MIT License
+| Role        | Username     | Password     | Access              |
+| ----------- | ------------ | ------------ | ------------------- |
+| **Admin**   | `admin`      | `Admin123`   | Full System Control |
+| **Staff**   | `staff001`   | `Staff123`   | Admin Features      |
+| **Student** | `student001` | `Student123` | Booking Features    |
