@@ -64,10 +64,20 @@ class AuthService {
         try {
             const response = await api.login(credentials);
             
-            if (response.token && response.user) {
+            // Backend returns: { token, username, email, fullName, role, expiresAt }
+            if (response.token) {
                 this.saveToken(response.token);
-                this.saveUser(response.user);
-                return { success: true, user: response.user };
+                
+                // Convert backend response to user object
+                const user = {
+                    username: response.username,
+                    email: response.email,
+                    fullName: response.fullName,
+                    role: response.role
+                };
+                
+                this.saveUser(user);
+                return { success: true, user };
             }
             
             throw new Error('Invalid response from server');

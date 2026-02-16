@@ -125,9 +125,9 @@ function renderLoginPage() {
             <div class="card" style="max-width: 450px; margin: 1rem auto; background: var(--bg-tertiary);">
                 <h4 style="font-size: 0.875rem; margin-bottom: 0.5rem;">🔑 Demo Credentials:</h4>
                 <div style="font-size: 0.875rem; font-family: monospace;">
-                    <p style="margin: 0.25rem 0;"><strong>Admin:</strong> admin / admin123</p>
-                    <p style="margin: 0.25rem 0;"><strong>Staff:</strong> staff1 / password123</p>
-                    <p style="margin: 0.25rem 0;"><strong>Student:</strong> student1 / password123</p>
+                    <p style="margin: 0.25rem 0;"><strong>Admin:</strong> admin / Admin123</p>
+                    <p style="margin: 0.25rem 0;"><strong>Staff:</strong> staff001 / Staff123</p>
+                    <p style="margin: 0.25rem 0;"><strong>Student:</strong> student001 / Student123</p>
                 </div>
             </div>
         </div>
