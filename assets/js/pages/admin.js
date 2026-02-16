@@ -124,7 +124,7 @@ async function loadAdminBookings() {
                         ${bookings.map(booking => `
                             <tr>
                                 <td>
-                                    <div><strong>${escapeHtml(booking.userName || 'Unknown')}</strong></div>
+                                    <div><strong>${escapeHtml(booking.userFullName || 'Unknown')}</strong></div>
                                     <small class="text-muted">${createRoleBadge(booking.userRole || 1)}</small>
                                 </td>
                                 <td>${escapeHtml(booking.roomName || 'Room')}</td>
