@@ -28,16 +28,28 @@ class ApiService {
     // Generic request method
     async request(endpoint, options = {}) {
         const url = `${this.baseURL}${endpoint}`;
+        const headers = this.getHeaders(options.auth !== false);
+        
         const config = {
             ...options,
-            headers: this.getHeaders(options.auth !== false)
+            headers: headers
         };
+
+        console.log(`📡 API Request: ${options.method || 'GET'} ${url}`);
+        console.log('Headers:', headers);
 
         try {
             const response = await fetch(url, config);
+            
+            // Handle 204 No Content
+            if (response.status === 204) {
+                return null;
+            }
+
             const data = await response.json().catch(() => null);
 
             if (!response.ok) {
+                console.error('❌ API Error Response:', { status: response.status, data });
                 throw {
                     status: response.status,
                     message: data?.message || data?.title || 'An error occurred',
@@ -47,7 +59,7 @@ class ApiService {
 
             return data;
         } catch (error) {
-            console.error('API Error:', error);
+            console.error('❌ API Request Failed:', error);
             throw error;
         }
     }
@@ -101,7 +113,8 @@ class ApiService {
 
     // ===== ROOMS ENDPOINTS =====
     async getRooms(params = {}) {
-        return this.get(API_CONFIG.ENDPOINTS.ROOMS, params);
+        const response = await this.get(API_CONFIG.ENDPOINTS.ROOMS, params);
+        return response.data || response;
     }
 
     async getRoomById(id) {
@@ -126,7 +139,8 @@ class ApiService {
 
     // ===== BOOKINGS ENDPOINTS =====
     async getBookings(params = {}) {
-        return this.get(API_CONFIG.ENDPOINTS.BOOKINGS, params);
+        const response = await this.get(API_CONFIG.ENDPOINTS.BOOKINGS, params);
+        return response.data || response;
     }
 
     async createBooking(bookingData) {
