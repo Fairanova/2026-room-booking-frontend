@@ -1,113 +1,113 @@
-# 🏢 Room Booking System Frontend
+# 🏢 Frontend Sistem Peminjaman Ruangan
 
-A modern, responsive web application for managing university room bookings. Built with Vanilla JavaScript, HTML5, and CSS3, featuring a complete role-based access control system.
+Aplikasi web modern dan responsif untuk mengelola peminjaman ruangan kampus. Dibangun dengan Vanilla JavaScript, HTML5, dan CSS3, dilengkapi dengan sistem kontrol akses berbasis peran (RBAC).
 
-## ✨ Features
+## ✨ Fitur Utama
 
-### 🔐 Authentication & Security
+### 🔐 Autentikasi & Keamanan
 
-- **Secure Login & Registration**: JWT-based authentication.
-- **Role-Based Access Control (RBAC)**: Strict separation between Student, Staff, and Admin roles.
-- **Protected Routes**: Automatic redirection for unauthorized access.
+- **Login & Registrasi Aman**: Autentikasi berbasis JWT.
+- **Kontrol Akses Berbasis Peran (RBAC)**: Pemisahan tegas antara peran Mahasiswa, Staf, dan Admin.
+- **Rute Terlindungi**: Pengalihan otomatis untuk akses yang tidak sah.
 
-### 🎓 Student Features
+### 🎓 Fitur Mahasiswa
 
-- **Dashboard**: Quick overview of booking stats and recent activities.
-- **Browse Rooms**: View available rooms with details (capacity, facilities).
-- **Search & Filter**: Find rooms by name, code, or building.
-- **Book a Room**: Simple modal interface to request room bookings.
-- **My Bookings**: Track booking status (Pending, Approved, Rejected) and cancel pending requests.
+- **Dashboard**: Ringkasan statistik peminjaman dan aktivitas terkini.
+- **Lihat Ruangan**: Melihat ruangan yang tersedia beserta detailnya (kapasitas, fasilitas).
+- **Pencarian & Filter**: Mencari ruangan berdasarkan nama, kode, atau gedung.
+- **Booking Ruangan**: Antarmuka modal sederhana untuk mengajukan peminjaman ruangan.
+- **Peminjaman Saya**: Melacak status peminjaman (Menunggu, Disetujui, Ditolak) dan membatalkan permintaan yang masih menunggu.
 
-### 🛡️ Admin & Staff Features
+### 🛡️ Fitur Admin & Staf
 
-- **Admin Dashboard**: Overview of system-wide booking statistics.
-- **Room Management (CRUD)**:
-  - Add new rooms with facilities.
-  - Edit existing room details.
-  - Soft-delete rooms.
-- **Booking Management**:
-  - View all bookings in the system.
-  - Filter by status (Pending, Approved, Rejected, etc.).
-  - **Approve/Reject Workflow**: Review booking requests with optional rejection reasons.
+- **Dashboard Admin**: Statistik peminjaman keseluruhan sistem.
+- **Manajemen Ruangan (CRUD)**:
+  - Tambah ruangan baru dengan fasilitas.
+  - Edit detail ruangan yang ada.
+  - Hapus (soft-delete) ruangan.
+- **Manajemen Peminjaman**:
+  - Lihat semua peminjaman dalam sistem.
+  - Filter berdasarkan status (Menunggu, Disetujui, Ditolak, dll).
+  - **Alur Persetujuan/Penolakan**: Tinjau permintaan peminjaman dengan opsi alasan penolakan.
 
-## 🛠️ Tech Stack
+## 🛠️ Teknologi yang Digunakan
 
 - **Core**: HTML5, CSS3, JavaScript (ES6+)
-- **Architecture**: Single Page Application (SPA) with custom Router
-- **Styling**: Custom CSS Variables, Flexbox/Grid (No frameworks)
-- **API**: Fetch API for communication with .NET Core Backend
+- **Arsitektur**: Single Page Application (SPA) dengan Router kustom
+- **Styling**: Variabel CSS Kustom, Flexbox/Grid (Tanpa framework)
+- **API**: Fetch API untuk komunikasi dengan Backend .NET Core
 
-## 📁 Project Structure
+## 📁 Struktur Proyek
 
 ```bash
 booking-room-fe/
-├── index.html              # Entry point
+├── index.html              # Entry point utama
 ├── assets/
 │   ├── css/
-│   │   ├── main.css        # Global variables & reset
-│   │   └── components.css  # Reusable UI components
+│   │   ├── main.css        # Variabel global & reset
+│   │   └── components.css  # Komponen UI yang dapat digunakan kembali
 │   └── js/
-│       ├── app.js          # Main application logic & navigation
-│       ├── router.js       # Client-side routing
-│       ├── auth.js         # Authentication service
-│       ├── api.js          # API client wrapper
-│       ├── config.js       # App configuration
-│       └── pages/          # Page controllers
+│       ├── app.js          # Logika aplikasi utama & navigasi
+│       ├── router.js       # Routing sisi klien
+│       ├── auth.js         # Layanan autentikasi
+│       ├── api.js          # Pembungkus (wrapper) klien API
+│       ├── config.js       # Konfigurasi aplikasi
+│       └── pages/          # Pengontrol halaman (controllers)
 │           ├── home.js
 │           ├── login.js
 │           ├── register.js
 │           ├── dashboard.js
-│           ├── rooms.js    # Student room browsing
-│           ├── bookings.js # Student booking management
-│           └── admin.js    # Admin panel features
+│           ├── rooms.js    # Penjelajahan ruangan mahasiswa
+│           ├── bookings.js # Manajemen booking mahasiswa
+│           └── admin.js    # Fitur panel admin
 ```
 
-## 🚀 Getting Started
+## 🚀 Memulai (Getting Started)
 
-### Prerequisites
+### Prasyarat
 
-- A modern web browser.
-- Backend API running on `http://localhost:5001`.
+- Browser web modern.
+- Backend API berjalan di `http://localhost:5001`.
 
-### Installation
+### Instalasi
 
-1. **Clone the repository**
+1. **Clone repository**
 
    ```bash
    git clone https://github.com/Fairanova/2026-room-booking-frontend.git
    cd booking-room-fe
    ```
 
-2. **Serve the application**
-   You can use any static file server. Examples:
+2. **Jalankan aplikasi**
+   Anda dapat menggunakan server file statis apa pun. Contoh:
 
-   **Using Python:**
+   **Menggunakan Python:**
 
    ```bash
    python -m http.server 8000
    ```
 
-   **Using Node.js (http-server):**
+   **Menggunakan Node.js (http-server):**
 
    ```bash
    npx http-server
    ```
 
    **VS Code Live Server:**
-   Open index.html and click "Go Live".
+   Buka index.html dan klik "Go Live".
 
-3. **Access the App**
-   Open `http://localhost:8000` (or your server port) in the browser.
+3. **Akses Aplikasi**
+   Buka `http://localhost:8000` (atau port server Anda) di browser.
 
-## 🔧 Configuration
+## 🔧 Konfigurasi
 
-API Endpoints are configured in `assets/js/config.js`.
-Default API URL: `http://localhost:5001/api`
+Endpoint API dikonfigurasi di `assets/js/config.js`.
+URL API Default: `http://localhost:5001/api`
 
-## 👥 User Roles (Demo Credentials)
+## 👥 Peran Pengguna (Kredensial Demo)
 
-| Role        | Username     | Password     | Access              |
-| ----------- | ------------ | ------------ | ------------------- |
-| **Admin**   | `admin`      | `Admin123`   | Full System Control |
-| **Staff**   | `staff001`   | `Staff123`   | Admin Features      |
-| **Student** | `student001` | `Student123` | Booking Features    |
+| Peran (Role)  | Username     | Password     | Akses                |
+| ------------- | ------------ | ------------ | -------------------- |
+| **Admin**     | `admin`      | `Admin123`   | Kontrol Sistem Penuh |
+| **Staf**      | `staff001`   | `Staff123`   | Fitur Admin          |
+| **Mahasiswa** | `student001` | `Student123` | Fitur Booking        |
